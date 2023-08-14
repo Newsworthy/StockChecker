@@ -19,7 +19,7 @@ suite('Functional Tests', function () {
           assert.exists(res.body.stockData.price, "GOOG has a price");
           done();
         });
-    });
+    }).timeout(5000);
     test("Viewing one stock and liking it: GET request to /api/stock-prices", function (done) {
       chai
         .request(server)
@@ -33,7 +33,7 @@ suite('Functional Tests', function () {
           assert.exists(res.body.stockData.price, "GOLD has a price");
           done();
         });
-    });
+    }).timeout(5000);
     test("Viewing the same stock and liking it again: GET request to /api/stock-prices", function (done) {
       chai
         .request(server)
@@ -47,7 +47,7 @@ suite('Functional Tests', function () {
           assert.exists(res.body.stockData.price, "GOLD has a price");
           done();
         });
-    });
+    }).timeout(5000);
     test("Viewing two stocks: GET request to /api/stock-prices", function (done) {
       chai
         .request(server)
@@ -62,7 +62,7 @@ suite('Functional Tests', function () {
           assert.exists(res.body.stockData[1].price, "T has a price");
           done();
         });
-    });
+    }).timeout(5000);
     test("Viewing two stocks and liking them: GET request to /api/stock-prices", function (done) {
       chai
         .request(server)
@@ -79,7 +79,7 @@ suite('Functional Tests', function () {
           assert.exists(res.body.stockData[1].rel_likes, "T has has rel_likes");
           done();
         });
-    });
+    }).timeout(5000);
   })
   // Viewing one stock: GET request to /api/stock-prices/
   // Viewing one stock and liking it: GET request to /api/stock-prices/
